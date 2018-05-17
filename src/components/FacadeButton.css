@@ -1,0 +1,17 @@
+.button {
+  margin: 0 0 30px 0;
+  padding: 0;
+  width: 80%;
+}
+
+a.yellow {
+  display: block;
+  border: 2px solid #f8e71c;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
