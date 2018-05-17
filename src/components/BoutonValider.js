@@ -10,7 +10,7 @@ class BoutonValider extends Component {
     return (
       <div>
         <button className="bouton-valider" onClick={this.yes}>
-          <i class="fas fa-check-circle" />
+          <i className="fas fa-check-circle" />
         </button>
       </div>
     );
