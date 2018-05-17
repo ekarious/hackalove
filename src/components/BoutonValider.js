@@ -9,8 +9,8 @@ class BoutonValider extends Component {
   render() {
     return (
       <div>
-        <button className="bouton-valider" onClick={this.yes}>
-          <i className="fas fa-check-circle" />
+        <button className="bouton-valider" onClick={() => this.props.valider()}>
+          <i class="fas fa-check-circle" />
         </button>
       </div>
     );
