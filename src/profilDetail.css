@@ -1,0 +1,10 @@
+.bordurePhoto {
+    border: 2px solid black;
+    box-shadow: 1px 3px 2px 1px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.monPetitPlus {
+    margin: 0 30px 10px 30px
+}

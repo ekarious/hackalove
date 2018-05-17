@@ -15,11 +15,10 @@ class ListePersonnes extends Component {
         this.setState({ Personnes });
       });
   }
-
   render() {
     return (
       <div>
-        <ul>{this.state.Personnes.map(person => <li>{person.name}</li>)}</ul>
+        <ul>{this.state.Personnes.map(person => <p>{person.species}</p>)}</ul>
       </div>
     );
   }
