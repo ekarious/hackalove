@@ -15,25 +15,39 @@ import "../components/BoutonValider.js";
 class LoginDetail extends Component {
   constructor(props) {
     super(props);
+    this.state = { value: "" };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange(event) {
+    this.setState({ value: event.target.value.toUpperCase() });
+  }
+  handleSubmit(event) {
+    alert("Email was submitted" + this.state.value);
+    event.preventDefault();
+  }
   render() {
     return (
       <Container>
         <Row>
-          <Col md={{ size: 6, offset: 2 }} />
           <Form method="post" action="" onSubmit={this.handleSubmit}>
             <FormGroup>
-              <Label for="exampleEmail">Valid input</Label>
-              <Input valid />
-              <FormFeedback valid>Sweet! that name is available</FormFeedback>
-              <FormText>Example help text that remains unchanged.</FormText>
+              <Label for="Email">Email</Label>
+              <Input
+                type="email"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
             </FormGroup>
             <FormGroup>
-              <Label for="examplePassword">Invalid input</Label>
-              <Input invalid />
-              <FormFeedback>Oh noes! that name is already taken</FormFeedback>
-              <FormText>Example help text that remains unchanged.</FormText>
+              <Label for="Password">Mot de passe</Label>
+              <Input
+                type="email"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
             </FormGroup>
           </Form>
         </Row>
