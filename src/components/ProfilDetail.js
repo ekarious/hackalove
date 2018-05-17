@@ -7,7 +7,7 @@ import "../profilDetail.css";
 class ProfilDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = { Personne: { id: 24 } };
+    this.state = { Personne: { id: 45 } };
   }
 
   componentDidMount() {
@@ -40,15 +40,13 @@ class ProfilDetail extends Component {
       "Anthony",
       "BenJo",
       "Vinz",
+      "Martin",
       "Marjorie",
       "Sylvain",
       "Julien",
       "Laetitia",
       "Edouard Metz"
     ];
-    const bffRandom = Math.floor(Math.random() * Math.floor(12));
-    const prenomRandom = Math.floor(Math.random() * Math.floor(12));
-    const funRandom = Math.floor(Math.random() * Math.floor(6));
     const fun = [
       "a déjà codé en javascript cul nu avec ",
       "a fait un rm -rf sur l'ordinateur de ",
@@ -57,6 +55,9 @@ class ProfilDetail extends Component {
       "est resté coincé dans les toilettes des PHP avec ",
       "a trouvé le WILD CIRCUS de Samir moins bien que celui de "
     ];
+    const bffRandom = Math.floor(Math.random() * Math.floor(prenom.length));
+    const prenomRandom = Math.floor(Math.random() * Math.floor(prenom.length));
+    const funRandom = Math.floor(Math.random() * Math.floor(fun.length));
 
     return (
       <div>
@@ -70,7 +71,7 @@ class ProfilDetail extends Component {
         </div>
         <div className="text-center">
           <h1>{this.state.Personne.name}</h1>
-          <h3>
+          <h3 className="monPetitPlus">
             {" "}
             Mon petit plus : {this.state.Personne.name} {fun[funRandom]}
             {prenom[prenomRandom]}
