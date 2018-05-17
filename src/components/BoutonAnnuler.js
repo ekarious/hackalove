@@ -9,7 +9,7 @@ class BoutonAnnuler extends Component {
   render() {
     return (
       <div>
-        <button className="bouton-annuler" onClick={this.no}>
+        <button className="bouton-annuler" onClick={() => this.props.annuler()}>
           <i class="fas fa-times-circle" />
         </button>
       </div>

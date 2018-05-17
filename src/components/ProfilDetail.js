@@ -7,7 +7,7 @@ import "../profilDetail.css";
 class ProfilDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = { Personne: { id: 45 } };
+    this.state = { Personne: { id: 21 } };
   }
 
   componentDidMount() {
@@ -58,15 +58,19 @@ class ProfilDetail extends Component {
     const bffRandom = Math.floor(Math.random() * Math.floor(prenom.length));
     const prenomRandom = Math.floor(Math.random() * Math.floor(prenom.length));
     const funRandom = Math.floor(Math.random() * Math.floor(fun.length));
+    const imageLargeur = window.innerWidth * 2 / 3;
 
     return (
       <div>
-        <SabreLaser />
+        <div>
+          <SabreLaser width={imageLargeur} />
+        </div>
         <div className="text-center">
           <img
             className="bordurePhoto"
             src={this.state.Personne.image}
             alt={this.state.Personne.name}
+            width={imageLargeur}
           />
         </div>
         <div className="text-center">
