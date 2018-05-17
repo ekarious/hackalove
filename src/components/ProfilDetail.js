@@ -7,7 +7,7 @@ import "../profilDetail.css";
 class ProfilDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = { Personne: { id: 13 } };
+    this.state = { Personne: { id: 24 } };
   }
 
   componentDidMount() {
@@ -55,7 +55,7 @@ class ProfilDetail extends Component {
       "a reniflé le Bootstrap de ",
       "a vomi sous la table de ",
       "est resté coincé dans les toilettes des PHP avec ",
-      "a trouvé le WILD CIRCUS de Samir mieux que celui de "
+      "a trouvé le WILD CIRCUS de Samir moins bien que celui de "
     ];
 
     return (
