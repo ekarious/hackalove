@@ -1,8 +1,9 @@
 import React from "react";
+import FilterChewi from "../components/FilterChewi";
 
 const Filters = () => (
   <div>
-    <h2>Filters</h2>
+    <FilterChewi />
   </div>
 );
 

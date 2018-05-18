@@ -1,147 +1,145 @@
 body {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .demo1,
-.demo2,
 .demo3 {
-    top: 300px;
-    position: absolute;
-    display: inline-block;
+  top: 300px;
+  position: absolute;
+  display: inline-block;
 }
 
 .demo1 {
-    right: 10px;
-}
-
-.demo2 {
-    left: 300px;
+  right: 10px;
 }
 
 .demo3 {
-    left: 10px;
+  left: 10px;
 }
 
 .custom-checkbox input[type="checkbox"] {
-    display: none;
-    opacity: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    position: absolute;
+  display: none;
+  opacity: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  position: absolute;
 }
 
 .custom-checkbox label {
-    position: relative;
-    z-index: 10;
-    cursor: pointer;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
 }
 
-.custom-checkbox input[type="checkbox"]~label {
-    width: 15px;
-    height: 56px;
-    background: #fafafa;
-    /* Old browsers */
-    background: -moz-linear-gradient( left, #fafafa 0%, #d4d4d4 40%, #fafafa 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient( left, #fafafa 0%, #d4d4d4 40%, #fafafa 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient( to right, #fafafa 0%, #d4d4d4 40%, #fafafa 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fafafa", endColorstr="#fafafa", GradientType=1);
-    display: inline-block;
+.custom-checkbox input[type="checkbox"] ~ label {
+  width: 15px;
+  height: 56px;
+  background: #fafafa;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #fafafa 0%, #d4d4d4 40%, #fafafa 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #fafafa 0%,
+    #d4d4d4 40%,
+    #fafafa 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #fafafa 0%, #d4d4d4 40%, #fafafa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fafafa", endColorstr="#fafafa", GradientType=1);
+  display: inline-block;
 }
 
-.custom-checkbox input[type="checkbox"]~label::before {
-    content: "";
-    width: 15px;
-    height: 6px;
-    background: #7e7d7d;
-    position: absolute;
-    top: -6px;
-    left: 0px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.custom-checkbox input[type="checkbox"] ~ label::before {
+  content: "";
+  width: 15px;
+  height: 6px;
+  background: #7e7d7d;
+  position: absolute;
+  top: -6px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.custom-checkbox input[type="checkbox"]~label::after {
-    content: "";
-    width: 15px;
-    height: 6px;
-    background: #7e7d7d;
-    position: absolute;
-    bottom: -6px;
-    left: 0px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+.custom-checkbox input[type="checkbox"] ~ label::after {
+  content: "";
+  width: 15px;
+  height: 6px;
+  background: #7e7d7d;
+  position: absolute;
+  bottom: -6px;
+  left: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-.custom-checkbox input[type="checkbox"]:checked~label {
-    font-weight: 500;
+.custom-checkbox input[type="checkbox"]:checked ~ label {
+  font-weight: 500;
 }
 
-.custom-checkbox input[type="checkbox"]:checked~label::before {
-    height: 4px;
-    top: -4px;
+.custom-checkbox input[type="checkbox"]:checked ~ label::before {
+  height: 4px;
+  top: -4px;
 }
 
-.custom-checkbox input[type="checkbox"]:checked~label~.plasma {
-    height: 300px;
+.custom-checkbox input[type="checkbox"]:checked ~ label ~ .plasma {
+  height: 300px;
 }
 
 .lightsaber .plasma {
-    transition: height 300ms;
-    -moz-transition: height 300ms;
-    -webkit-transition: height 300ms;
-    -o-transition: height 300ms;
-    -ms-transition: height 300ms;
-    border-radius: 12px 12px 0 0;
-    position: absolute;
-    bottom: 55px;
-    left: 2px;
-    width: 10px;
-    display: block;
-    filter: blur(1px);
-    -moz-filter: blur(1px);
-    -webkit-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    height: 300px;
-    z-index: 5;
+  transition: height 300ms;
+  -moz-transition: height 300ms;
+  -webkit-transition: height 300ms;
+  -o-transition: height 300ms;
+  -ms-transition: height 300ms;
+  border-radius: 12px 12px 0 0;
+  position: absolute;
+  bottom: 55px;
+  left: 2px;
+  width: 10px;
+  display: block;
+  filter: blur(1px);
+  -moz-filter: blur(1px);
+  -webkit-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  height: 300px;
+  z-index: 5;
 }
 
 .yoda {
-    background: #87dc63;
-    /* Old browsers */
-    background: -moz-linear-gradient( left, #87dc63 30%, #ffffff 50%, #87dc63 70%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient( left, #87dc63 30%, #ffffff 50%, #87dc63 70%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient( to right, #87dc63 30%, #ffffff 50%, #87dc63 70%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#87dc63", endColorstr="#87dc63", GradientType=1);
-}
-
-.vader {
-    background: #e51115;
-    /* Old browsers */
-    background: -moz-linear-gradient( left, #e51115 0%, #ffffff 29%, #ffffff 72%, #e51115 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient( left, #e51115 0%, #ffffff 29%, #ffffff 72%, #e51115 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient( to right, #e51115 0%, #ffffff 29%, #ffffff 72%, #e51115 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#e51115", endColorstr="#e51115", GradientType=1);
+  background: #87dc63;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #87dc63 30%, #ffffff 50%, #87dc63 70%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #87dc63 30%,
+    #ffffff 50%,
+    #87dc63 70%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #87dc63 30%, #ffffff 50%, #87dc63 70%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#87dc63", endColorstr="#87dc63", GradientType=1);
 }
 
 .windu {
-    background: #ca74dd;
-    /* Old browsers */
-    background: -moz-linear-gradient( left, #1b5ce9 30%, #ffffff 50%, #1b5ce9 70%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient( left, #1b5ce9 30%, #ffffff 50%, #1b5ce9 70%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient( to right, #1b5ce9 30%, #ffffff 50%, #1b5ce9 70%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ca74dd", endColorstr="#ca74dd", GradientType=1);
+  background: #ca74dd;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #1b5ce9 30%, #ffffff 50%, #1b5ce9 70%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #1b5ce9 30%,
+    #ffffff 50%,
+    #1b5ce9 70%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #1b5ce9 30%, #ffffff 50%, #1b5ce9 70%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ca74dd", endColorstr="#ca74dd", GradientType=1);
 }
