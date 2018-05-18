@@ -1,14 +1,6 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
-import { Container, Row, Col } from "reactstrap";
-import {
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormFeedback,
-  FormText
-} from "reactstrap";
+import { Container, Row } from "reactstrap";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 import "../components/LoginDetail.css";
 import "../components/BoutonValider.js";
 
@@ -39,7 +31,7 @@ class LoginDetail extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="LoginDetail">
         <Row>
           <Form method="post" action="" onSubmit={this.handleSubmit}>
             <FormGroup>
