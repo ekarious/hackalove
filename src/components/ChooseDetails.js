@@ -11,42 +11,32 @@ import {
   CardSubtitle,
   CardBody
 } from "reactstrap";
+import store from "../store";
 
 class ChooseDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Personne: { id: 25 }
+      Personnes: [],
+      selectionFinal: 0
     };
   }
-  componentDidMount() {
-    axios
-      .get(
-        `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${
-          this.state.Personne.id
-        }.json`
-      )
-      .then(res => {
-        const Personne = res.data;
-        console.log(res.data);
-        this.setState({ Personne });
-      });
-  }
+
   render() {
+    let indexRace = this.state.selectionFinal;
+
+    console.log("=========$$$$$$$$$===========================");
+    console.log(store);
+    console.log("====================================");
     return (
       <div className="suggestioncard">
-        <h5>Veux-tu être mon stormtrompeur?</h5>
+        <h5>Veux-tu être mon storm-trompeur?</h5>
         <CardGroup>
           <Card>
-            <CardImg
-              top
-              width="100%"
-              src={this.state.Personne.image}
-              alt={this.state.Personne.name}
-            />
+            <CardImg top width="100%" src={store.value[indexRace].image} />
             <CardBody>
-              <CardTitle>{this.state.Personne.name}</CardTitle>
-              <CardSubtitle>{this.state.Personne.gender}</CardSubtitle>
+              <CardTitle>{store.value[indexRace].name}</CardTitle>
+              <CardSubtitle>{store.value[indexRace].gender}</CardSubtitle>
             </CardBody>
           </Card>
         </CardGroup>
