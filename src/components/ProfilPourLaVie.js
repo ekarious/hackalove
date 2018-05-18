@@ -36,10 +36,18 @@ class ProfilPourLaVie extends Component {
       "justify-content": "center",
       "align-self": "center"
     };
+    const styleBoutons = {
+      display: "flex",
+      "justify-content": "space-around",
+      "align-items": "center",
+      "margin-bottom": "20px"
+    };
     return (
       <div>
-        <BoutonAnnuler />
-        <BoutonValider valider={this.visibleAmour} />
+        <div style={styleBoutons}>
+          <BoutonAnnuler />
+          <BoutonValider valider={this.visibleAmour} />
+        </div>
         <div style={style}>
           <p>Vous êtes désormais unis pour la vie !</p>
           <div style={styleFlex}>
