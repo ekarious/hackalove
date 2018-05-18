@@ -4,6 +4,7 @@ import logo from "../images/logo_chewie.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./chewiDream.css";
+import store from "../store";
 
 const image = {
   width: "100%"
@@ -13,8 +14,17 @@ class FilterChewi extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Personnes: []
+      value: "",
+      Personnes: [],
+      selection: {
+        species: null,
+        gender: null
+      }
     };
+
+    this.valider = this.valider.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    //this.handleSelectGender = this.handleSelectGender.bind(this);
   }
 
   componentWillMount() {
@@ -26,10 +36,24 @@ class FilterChewi extends Component {
       });
   }
 
+  valider() {
+    const filtre = this.state.Personnes.filter(
+      elt => elt.species === this.state.value
+    );
+    store.value = filtre;
+  }
+
+  handleSelect(event) {
+    this.setState({ value: event.target.value });
+  }
+  // handleSelectGender(event) {
+  //   this.setState.selection.gender = event.target.value;
+  // }
+
   render() {
     const speciseList = this.state.Personnes.map(person => person.species);
     const personnes = Array.from(new Set(speciseList));
-    const characters = personnes.map(el => <option>{el.toUpperCase()}</option>);
+    const characters = personnes.map(el => <option>{el}</option>);
 
     const genre = this.state.Personnes.map(person => person.gender);
     const trieGenre = Array.from(new Set(genre));
@@ -43,19 +67,21 @@ class FilterChewi extends Component {
         <img src={logo} style={image} />
         <div class="card">
           <div class="card-header cardBg">
-            <h1>Que chercher vous dans la galaxie ?</h1>
+            <h1>Que cherchez-vous dans la galaxie ?</h1>
           </div>
           <div class="card-body">
             <Form>
               <FormGroup>
                 <Label for="SelectEspece">
-                  <h5>L'espèce de votre futur moitier</h5>
+                  <h5>L'espèce de votre future moitié</h5>
                 </Label>
                 <Input
                   type="select"
                   name="selectEspece"
                   id="SelectEspece"
                   class="form-control"
+                  value={this.state.value}
+                  onChange={this.handleSelect}
                 >
                   {characters}
                 </Input>
@@ -66,19 +92,30 @@ class FilterChewi extends Component {
                 </Label>
                 <FormGroup check>
                   <Label check>
-                    <Input type="radio" name="radio1" required="required" />{" "}
+                    <Input
+                      type="radio"
+                      name="radio1"
+                      required="required"
+                      //onChange={this.handleSelectGender()}
+                    />{" "}
                     {genreList[0]}
                   </Label>
                 </FormGroup>
                 <FormGroup check>
                   <Label check>
-                    <Input type="radio" name="radio1" required="required" />{" "}
+                    <Input
+                      type="radio"
+                      name="radio1"
+                      required="required"
+                      //onChange={this.handleSelectGender()}
+                    />{" "}
                     {genreList[1]}
                   </Label>
                 </FormGroup>
               </FormGroup>
-
-              <Link to="/choose">Lancer la recherche</Link>
+              <Link to="/choose" onClick={this.valider()}>
+                Lancer la recherche
+              </Link>
             </Form>
           </div>
         </div>
