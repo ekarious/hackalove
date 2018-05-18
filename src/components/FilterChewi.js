@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import logo from "../images/logo_chewie.png";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import "./chewiDream.css";
 
 const image = {
   width: "100%"
@@ -27,76 +29,59 @@ class FilterChewi extends Component {
   render() {
     const speciseList = this.state.Personnes.map(person => person.species);
     const personnes = Array.from(new Set(speciseList));
-    const characters = personnes.map(el => <option>{el}</option>);
+    const characters = personnes.map(el => <option>{el.toUpperCase()}</option>);
+
+    const genre = this.state.Personnes.map(person => person.gender);
+    const trieGenre = Array.from(new Set(genre));
+    const genreList = trieGenre.map(el => (
+      <aria-label>{el.toUpperCase()}</aria-label>
+    ));
 
     return (
       <div>
         <ul />
         <img src={logo} style={image} />
-        <Form>
-          <FormGroup>
-            <Label for="exampleSelect">
-              Choisier l'espce de votre futur moitier
-            </Label>
-            <Input type="select" name="select" id="exampleSelect">
-              {characters}
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Label for="exampleSelectMulti">Select Multiple</Label>
-            <Input
-              type="select"
-              name="selectMulti"
-              id="exampleSelectMulti"
-              multiple
-            >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Label for="exampleText">Text Area</Label>
-            <Input type="textarea" name="text" id="exampleText" />
-          </FormGroup>
-          <FormGroup>
-            <Label for="exampleFile">File</Label>
-            <Input type="file" name="file" id="exampleFile" />
-            <FormText color="muted">
-              This is some placeholder block-level help text for the above
-              input. It's a bit lighter and easily wraps to a new line.
-            </FormText>
-          </FormGroup>
-          <FormGroup tag="fieldset">
-            <legend>Radio Buttons</legend>
-            <FormGroup check>
-              <Label check>
-                <Input type="radio" name="radio1" /> Option one is this and
-                that—be sure to include why it's great
-              </Label>
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input type="radio" name="radio1" /> Option two can be something
-                else and selecting it will deselect option one
-              </Label>
-            </FormGroup>
-            <FormGroup check disabled>
-              <Label check>
-                <Input type="radio" name="radio1" disabled /> Option three is
-                disabled
-              </Label>
-            </FormGroup>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" /> Check me out
-            </Label>
-          </FormGroup>
-          <Button>Submit</Button>
-        </Form>
+        <div class="card">
+          <div class="card-header cardBg">
+            <h1>Que chercher vous dans la galaxie ?</h1>
+          </div>
+          <div class="card-body">
+            <Form>
+              <FormGroup>
+                <Label for="SelectEspece">
+                  <h5>L'espèce de votre futur moitier</h5>
+                </Label>
+                <Input
+                  type="select"
+                  name="selectEspece"
+                  id="SelectEspece"
+                  class="form-control"
+                >
+                  {characters}
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="genre">
+                  <h5>Je recherche :</h5>
+                </Label>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio1" required="required" />{" "}
+                    {genreList[0]}
+                  </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio1" required="required" />{" "}
+                    {genreList[1]}
+                  </Label>
+                </FormGroup>
+              </FormGroup>
+
+              <Link to="/choose">Lancer la recherche</Link>
+            </Form>
+          </div>
+        </div>
       </div>
     );
   }
