@@ -19,22 +19,23 @@ const background = {
 const Facade = () => (
   <div style={background} className="Facade">
     <Logo />
-    <h4>Reglement principal du test</h4>
+    <h6>Au service de l'Empire</h6>
     <div className="rules">
       <p>
-        1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas beatae
-        omnis est eos corrupti dolor eveniet recusandae sed harum velit in
-        laboriosam cupiditate placeat.
+        1. Les Stormtroopers sont l'élite des soldats à travers la galaxie sous
+        les ordres directs de Dark Vador. Ils sont le symbole le plus
+        caractéristique du nouvel Ordre.
       </p>
       <p>
-        2. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
-        tempora saepe repellat rerum minima, eius delectus nesciunt modi!
-        Commodi asperiores perspiciatis.
+        2. Les cadets impériaux reçoivent un endoctrinement intensif aux idéaux
+        de l'Empire. Chaque soldat est totalement préparé à donner sans
+        hésitation sa vie au service de l'Empire.
       </p>
       <p>
-        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odio
-        quibusdam ipsum fugit itaque ullam reiciendis doloremque eos sequi
-        ducimus possimus eveniet.
+        3. Des simulations grandeur nature ont lieu afin de tester la qualité
+        des nouvelles recrues. Les futurs stormtroopers voient souvent leur
+        camarades mourir sous leurs yeux, mais ils ne doivent nullement les
+        aider et accomplir l'ordre qui leur a été donné.
       </p>
     </div>
     <FacadeButton link="/starlove" text="Devenir Storm Trooper" />

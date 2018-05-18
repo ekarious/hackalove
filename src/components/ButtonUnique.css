@@ -1,0 +1,44 @@
+.button .yellow {
+  margin: 0 0 30px 0;
+  padding: 0;
+  width: 80%;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.button .valider,
+.button .pink {
+  margin-bottom: 50px;
+  color: #fd45cc;
+  font-size: 250%;
+}
+
+.button .annuler,
+.button .red {
+  margin-bottom: 50px;
+  color: red;
+  font-size: 250%;
+}
+
+.button .validerVert,
+.button .green {
+  margin-bottom: 50px;
+  color: green;
+  font-size: 250%;
+}
+
+.button .retour,
+.button .blue {
+  color: #12a4e1;
+  font-size: 250%;
+}
+
+.button .red2 {
+  color: red;
+}

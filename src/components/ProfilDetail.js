@@ -3,18 +3,19 @@ import { Table, Container, Row, Col } from "reactstrap";
 import axios from "axios";
 import SabreLaser from "./SabreLaser";
 import "../profilDetail.css";
+import choix from "../choix";
 
 class ProfilDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = { Personne: { id: 45 } };
+    this.state = { Personne: { id: 25 } };
   }
 
   componentDidMount() {
     axios
       .get(
         `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${
-          this.state.Personne.id
+          choix.value.id
         }.json`
       )
       .then(res => {
@@ -58,15 +59,19 @@ class ProfilDetail extends Component {
     const bffRandom = Math.floor(Math.random() * Math.floor(prenom.length));
     const prenomRandom = Math.floor(Math.random() * Math.floor(prenom.length));
     const funRandom = Math.floor(Math.random() * Math.floor(fun.length));
+    const imageLargeur = window.innerWidth * 2 / 3;
 
     return (
       <div>
-        <SabreLaser />
+        <div>
+          <SabreLaser width={imageLargeur} />
+        </div>
         <div className="text-center">
           <img
             className="bordurePhoto"
             src={this.state.Personne.image}
             alt={this.state.Personne.name}
+            width={imageLargeur}
           />
         </div>
         <div className="text-center">
