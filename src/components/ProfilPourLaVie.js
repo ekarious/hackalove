@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import BoutonAnnuler from "./BoutonAnnuler";
-import BoutonValider from "./BoutonValider";
+import ButtonUnique from "./ButtonUnique";
 
 class ProfilPourLaVie extends Component {
   constructor(props) {
@@ -36,17 +35,33 @@ class ProfilPourLaVie extends Component {
       "justify-content": "center",
       "align-self": "center"
     };
-    const styleBoutons = {
+    const styleButtons = {
       display: "flex",
       "justify-content": "space-around",
       "align-items": "center",
       "margin-bottom": "20px"
     };
+    const styleButtonUnique = {
+      margin: "0 0 0 0",
+      padding: "0 0 0 0"
+    };
     return (
       <div>
-        <div style={styleBoutons}>
-          <BoutonAnnuler />
-          <BoutonValider valider={this.visibleAmour} />
+        <div style={styleButtons}>
+          <ButtonUnique
+            color="red"
+            link="/profil#"
+            action={this.visibleAmour}
+            text={<i className="fas fa-times-circle" />}
+            style={styleButtonUnique}
+          />
+          <ButtonUnique
+            color="green"
+            link="/profil#"
+            action={this.visibleAmour}
+            text={<i className="fas fa-check-circle" />}
+            style={styleButtonUnique}
+          />
         </div>
         <div style={style}>
           <p>Vous êtes désormais unis pour la vie !</p>
