@@ -15,19 +15,28 @@ import "../components/BoutonValider.js";
 class LoginDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = {
+      username: "",
+      password: ""
+    };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeUsername = this.handleChangeUsername.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value.toUpperCase() });
+  handleChangeUsername(event) {
+    this.setState({ username: event.target.value });
   }
+
+  handleChangePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+
   handleSubmit(event) {
     alert("Email was submitted" + this.state.value);
     event.preventDefault();
   }
+
   render() {
     return (
       <Container>
@@ -36,17 +45,19 @@ class LoginDetail extends Component {
             <FormGroup>
               <Label for="Email">Email</Label>
               <Input
+                className="input"
                 type="email"
-                value={this.state.value}
-                onChange={this.handleChange}
+                value={this.state.username}
+                onChange={this.handleChangeUsername}
               />
             </FormGroup>
             <FormGroup>
               <Label for="Password">Mot de passe</Label>
               <Input
-                type="email"
-                value={this.state.value}
-                onChange={this.handleChange}
+                className="input"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChangePassword}
               />
             </FormGroup>
           </Form>
