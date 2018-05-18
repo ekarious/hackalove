@@ -1,4 +1,8 @@
 .bouton-valider {
-  color: green;
+  margin-bottom: 50px;
+}
+
+.bouton-valider a {
+  color: #fd45cc;
   font-size: 250%;
 }

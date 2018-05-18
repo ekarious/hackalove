@@ -10,7 +10,7 @@ class BoutonAnnuler extends Component {
     return (
       <div>
         <button className="bouton-annuler" onClick={() => this.props.annuler()}>
-          <i class="fas fa-times-circle" />
+          <i className="fas fa-times-circle" />
         </button>
       </div>
     );
