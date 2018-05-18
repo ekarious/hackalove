@@ -1,11 +1,13 @@
-form {
+#fomulaire form {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 17px;
 }
-h2 {
+
+#fomulaire h2 {
   text-align: center;
 }
-h4 {
+
+#fomulaire h4 {
   margin-bottom: 8px;
 }

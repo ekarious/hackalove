@@ -39,7 +39,7 @@ class LoginDetail extends Component {
 
   render() {
     return (
-      <Container>
+      <Container id="logoForm">
         <Row>
           <Form method="post" action="" onSubmit={this.handleSubmit}>
             <FormGroup>

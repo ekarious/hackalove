@@ -67,7 +67,7 @@ class FilterChewi extends Component {
         <img src={logo} style={image} />
         <div class="card">
           <div class="card-header cardBg">
-            <h1>Que cherchez-vous dans la galaxie ?</h1>
+            <h1>Qui cherchez-vous dans la galaxie ?</h1>
           </div>
           <div class="card-body">
             <Form>
