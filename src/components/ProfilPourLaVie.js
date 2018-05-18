@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ButtonUnique from "./ButtonUnique";
+import vinz from "../images/choubaka_vinz.jpg";
 
 class ProfilPourLaVie extends Component {
   constructor(props) {
@@ -31,7 +32,6 @@ class ProfilPourLaVie extends Component {
       top: "10vh",
       left: "10vw",
       width: "80vw",
-      height: "80vh",
       "background-color": "pink",
       "font-weight": "bolder",
       "font-size": "1.8em",
@@ -53,9 +53,10 @@ class ProfilPourLaVie extends Component {
       padding: "0 0 0 0"
     };
     const styleButtonUniqueChangeAvis = {
-      margin: "0 0 0 0",
+      margin: "20px 0 0 0",
       padding: "0 0 0 0",
-      "font-size": "10px !important"
+      "font-size": "10px !important",
+      border: "2px solid red"
     };
     return (
       <div>
@@ -79,8 +80,10 @@ class ProfilPourLaVie extends Component {
           <p>Vous êtes désormais unis pour la vie !</p>
           <div style={styleFlex}>
             <img
-              src="http://via.placeholder.com/250x350"
+              src={vinz}
               alt="Amour pour toujours"
+              width="100%"
+              height="100%"
             />
           </div>
           <div style={styleFlex}>
