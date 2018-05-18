@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import BoutonAnnuler from "./BoutonAnnuler";
-import BoutonValider from "./BoutonValider";
+import ButtonUnique from "./ButtonUnique";
+import vinz from "../images/choubaka_vinz.jpg";
 
 class ProfilPourLaVie extends Component {
   constructor(props) {
@@ -9,11 +9,18 @@ class ProfilPourLaVie extends Component {
       modalAmour: "none"
     };
     this.visibleAmour = this.visibleAmour.bind(this);
+    this.unvisibleAmour = this.unvisibleAmour.bind(this);
   }
 
   visibleAmour() {
     this.setState({
       modalAmour: "initial"
+    });
+  }
+
+  unvisibleAmour() {
+    this.setState({
+      modalAmour: "none"
     });
   }
 
@@ -25,7 +32,6 @@ class ProfilPourLaVie extends Component {
       top: "10vh",
       left: "10vw",
       width: "80vw",
-      height: "80vh",
       "background-color": "pink",
       "font-weight": "bolder",
       "font-size": "1.8em",
@@ -36,24 +42,57 @@ class ProfilPourLaVie extends Component {
       "justify-content": "center",
       "align-self": "center"
     };
-    const styleBoutons = {
+    const styleButtons = {
       display: "flex",
       "justify-content": "space-around",
       "align-items": "center",
       "margin-bottom": "20px"
     };
+    const styleButtonUnique = {
+      margin: "0 0 0 0",
+      padding: "0 0 0 0"
+    };
+    const styleButtonUniqueChangeAvis = {
+      margin: "20px 0 0 0",
+      padding: "0 0 0 0",
+      "font-size": "10px !important",
+      border: "2px solid red"
+    };
     return (
       <div>
-        <div style={styleBoutons}>
-          <BoutonAnnuler />
-          <BoutonValider valider={this.visibleAmour} />
+        <div style={styleButtons}>
+          <ButtonUnique
+            color="red"
+            link="/Filters"
+            action={this.visibleAmour}
+            text={<i className="fas fa-times-circle" />}
+            style={styleButtonUnique}
+          />
+          <ButtonUnique
+            color="green"
+            link="/profil#"
+            action={this.visibleAmour}
+            text={<i className="fas fa-check-circle" />}
+            style={styleButtonUnique}
+          />
         </div>
         <div style={style}>
           <p>Vous êtes désormais unis pour la vie !</p>
           <div style={styleFlex}>
             <img
-              src="http://via.placeholder.com/250x350"
+              src={vinz}
               alt="Amour pour toujours"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div style={styleFlex}>
+            <ButtonUnique
+              color="red2"
+              link="/profil#"
+              action={this.unvisibleAmour}
+              text={<p>Je change d'avis</p>}
+              style={styleButtonUniqueChangeAvis}
             />
           </div>
         </div>

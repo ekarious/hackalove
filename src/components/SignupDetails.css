@@ -1,13 +1,32 @@
-#fomulaire form {
+.SignupDetails {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 17px;
+  margin-bottom: 40px;
+  text-align: left !important;
 }
 
-#fomulaire h2 {
+.SignupDetails h2 {
   text-align: center;
 }
 
-#fomulaire h4 {
-  margin-bottom: 8px;
+.SignupDetails h4 {
+  margin-bottom: 12px;
+  margin-top: 30px;
+  border-bottom: 1px solid #fd45cc;
+}
+
+.SignupDetails .input {
+  border: 1px solid #fd45cc;
+  box-shadow: 0 2px 4px rgba(253, 69, 204, 0.5);
+}
+
+.SignupDetails .select {
+  border: 1px solid #fd45cc;
+  box-shadow: 0 2px 4px rgba(253, 69, 204, 0.5);
+}
+
+.SignupDetails .button {
+  border: 1px solid #fd45cc;
+  box-shadow: 0 2px 4px rgba(253, 69, 204, 0.5);
 }

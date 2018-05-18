@@ -1,13 +1,12 @@
-#logoForm form {
+.LoginDetail form {
   margin: 10px 20px !important;
   width: 100%;
+}
+
+.LoginDetail h2 {
   padding-top: 40%;
 }
 
-#logoForm h2 {
-  padding-top: 40%;
-}
-
-.input {
+.LoginDetail .input {
   border: 1px solid #fd45cc;
 }

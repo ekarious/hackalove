@@ -3,18 +3,19 @@ import { Table, Container, Row, Col } from "reactstrap";
 import axios from "axios";
 import SabreLaser from "./SabreLaser";
 import "../profilDetail.css";
+import choix from "../choix";
 
 class ProfilDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = { Personne: { id: 21 } };
+    this.state = { Personne: { id: 25 } };
   }
 
   componentDidMount() {
     axios
       .get(
         `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${
-          this.state.Personne.id
+          choix.value.id
         }.json`
       )
       .then(res => {
