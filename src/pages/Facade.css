@@ -1,21 +1,30 @@
+@font-face {
+  font-family: "Starjedi";
+  src: url("/src/font/Starjedi.ttf");
+}
+
 .Facade * {
   z-index: 10;
   font-family: Lato;
 }
 
-.Facade h4 {
+.Facade h6 {
   color: white;
   margin-bottom: 0;
+  font-family: Starjedi;
 }
 
 .Facade .rules {
   color: #bbb;
-  padding: 5px 20px;
+  padding: 4px 20px;
   flex: 1;
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 20px;
 }
 
 .Facade .logo {
   margin: 10px 20px !important;
+}
+.rules p {
+  font-family: Starjedi;
 }

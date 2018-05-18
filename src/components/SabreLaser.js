@@ -10,22 +10,12 @@ class SabreLaser extends Component {
     return (
       <div>
         <div class="custom-checkbox lightsaber demo1">
-          <input
-            type="checkbox"
-            id="sword1"
-            class="sound"
-            onchange="myfunction();"
-          />
+          <input type="checkbox" id="sword1" onchange="myfunction();" />
           <label for="sword1" />
           <div class="plasma yoda" />
         </div>
         <div class="custom-checkbox lightsaber demo3">
-          <input
-            type="checkbox"
-            id="sword3"
-            class="sound"
-            onchange="myfunction();"
-          />
+          <input type="checkbox" id="sword3" onchange="myfunction();" />
           <label for="sword3" />
           <div class="plasma windu" />
         </div>

@@ -1,5 +1,15 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Col, Row } from "reactstrap";
+import {
+  CustomInput,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText
+} from "reactstrap";
+import PinkButton from "./PinkButton";
 
 import "../components/SignupDetails.css";
 
@@ -19,38 +29,83 @@ class SignupDetails extends Component {
 
   render() {
     return (
-      <Form>
-        <h2>Créer un compte</h2>
+      <Form className="SignupDetails">
+        {/* email nom password */}
+        <h4>Tes identifiants</h4>
+        <FormGroup>
+          <Label for="exampleEmail">Email:</Label>
+          <Input
+            type="email"
+            name="email"
+            id="exampleEmail"
+            className="input"
+            placeholder=""
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword">Password:</Label>
+          <Input
+            type="password"
+            name="password"
+            id="examplePassword"
+            className="input"
+            placeholder=""
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="photo">Photo:</Label>
+          <Input type="file" name="photo" id="photo" className="input" />
+        </FormGroup>
         {/* Ton apparence */}
         <h4>Ton apparence</h4>
         {/* nom */}
         <FormGroup>
           <Label for="nom">Nom:</Label>
-          <Input type="name" name="name" id="nom" placeholder="" />
+          <Input
+            type="name"
+            name="name"
+            id="nom"
+            className="input"
+            placeholder=""
+          />
         </FormGroup>
         {/* planete */}
         <FormGroup>
           <Label for="planete">Planète:</Label>
-          <Input type="planete" name="planete" id="planete" placeholder="" />
+          <Input
+            type="planete"
+            name="planete"
+            id="planete"
+            className="input"
+            placeholder=""
+          />
         </FormGroup>
         {/* gender */}
 
         <Label for="genre">Genre:</Label>
-        <FormGroup check>
-          <Label check>
-            <Input type="radio" name="radio1" /> female
-          </Label>
+        <FormGroup>
+          <div>
+            <CustomInput
+              type="radio"
+              id="genderFemale"
+              name="gender"
+              value="female"
+              label="Female"
+              defaultChecked
+            />
+            <CustomInput
+              type="radio"
+              id="genderMale"
+              value="male"
+              name="gender"
+              label="Male"
+            />
+          </div>
         </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="radio" name="radio1" /> male
-          </Label>
-        </FormGroup>
-
         {/* yeux */}
         <FormGroup>
           <Label for="yeux">Yeux:</Label>
-          <Input type="select" name="select" id="yeux">
+          <Input type="select" name="select" className="select" id="eyes">
             <option>green</option>
             <option>blue</option>
             <option>red</option>
@@ -62,8 +117,8 @@ class SignupDetails extends Component {
         </FormGroup>
         {/* cheveux */}
         <FormGroup>
-          <Label for="exampleSelect">Cheveux:</Label>
-          <Input type="select" name="select" id="exampleSelect">
+          <Label for="hair">Cheveux:</Label>
+          <Input type="select" name="select" className="select" id="hair">
             <option>brun</option>
             <option>blond</option>
             <option>roux</option>
@@ -73,8 +128,8 @@ class SignupDetails extends Component {
         </FormGroup>
         {/* espèce: */}
         <FormGroup>
-          <Label for="exampleSelect">Espèces:</Label>
-          <Input type="select" name="select" id="exampleSelect">
+          <Label for="species">Espèces:</Label>
+          <Input type="select" name="select" className="select" id="species">
             <option>Human</option>
             <option>Javascripter</option>
             <option>Droïd</option>
@@ -100,86 +155,60 @@ class SignupDetails extends Component {
           <Label for="exampleSelect">Affiliations:</Label>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Alliance to Restore the
+              <Input type="checkbox" name="1" /> Alliance to Restore the
               Republic
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Red Squadron
+              <Input type="checkbox" name="2" /> Red Squadron
+            </Label>
+          </FormGroup>
+          {/* gender */}
+
+          <Label for="genre">Genre:</Label>
+          <FormGroup check>
+            <Label check>
+              <Input type="checkbox" name="3" /> Rogue Squadron
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Rogue Squadron
+              <Input type="checkbox" name="4" /> Massassi Group
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Massassi Group
+              <Input type="checkbox" name="5" /> Leia Organa's team
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Red Squadron
+              <Input type="checkbox" name="6" /> Endor strike team
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Red Squadron
+              <Input type="checkbox" name="7" /> Jedi Order
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Leia Organa's team
+              <Input type="checkbox" name="8" /> Bright Tree tribe
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Endor strike team
+              <Input type="checkbox" name="9" /> New Republic
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type="checkbox" name="radio1" /> Jedi Order
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" name="radio1" /> Bright Tree tribe
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" name="radio1" /> New Republic
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" name="radio1" /> Resistance
+              <Input type="checkbox" name="10" /> Resistance
             </Label>
           </FormGroup>
         </FormGroup>
-        {/* email nom password */}
-        <h4>Tes identifiants</h4>
-        <FormGroup>
-          <Label for="exampleEmail">Email:</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password:</Label>
-          <Input
-            type="password"
-            name="password"
-            id="examplePassword"
-            placeholder=""
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleFile">Photo:</Label>
-          <Input type="file" name="file" id="exampleFile" />
-        </FormGroup>
-        <Button>Submit</Button>
+        <PinkButton link="/filters" text="Envoyer" />
       </Form>
     );
   }

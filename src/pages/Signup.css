@@ -1,0 +1,11 @@
+.Signup .details {
+  margin-bottom: 30px !important;
+}
+
+.Signup h2 {
+  padding-top: 20px;
+}
+
+.Signup .details {
+  flex: 1;
+}
