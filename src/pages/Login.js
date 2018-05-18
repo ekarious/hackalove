@@ -3,6 +3,7 @@ import Logo from "../components/LogoStarlove";
 import hearts from "../images/starloveCoeurs.jpg";
 import LoginDetail from "../components/LoginDetail";
 import BoutonValider from "../components/BoutonValider";
+import "./Login.css";
 
 const background = {
   backgroundColor: "#000000",
@@ -18,7 +19,8 @@ const background = {
 const Login = () => (
   <div style={background} className="Login">
     <Logo className="logo" />
-    <LoginDetail />
+    <h2>Connexion</h2>
+    <LoginDetail className="details" />
     <BoutonValider />
   </div>
 );
